@@ -6,6 +6,7 @@ import SupabaseProvider from "@/providers/SupabaseProvider"
 import UserProvider from "@/providers/UserProvider"
 import ModalProvider from "@/providers/ModalProvider"
 import ToasterProvider from "@/providers/ToaterProvider"
+import getSongsByUsedId from "@/actions/getSongsByUserId"
 
 const figtree = Figtree({ subsets: ["latin"] })
 
@@ -18,7 +19,11 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
-const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
+export const revalidate = 0
+
+const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
+  const userSongs = await getSongsByUsedId()
+
   return (
     <html lang="en">
       <body className={figtree.className}>
@@ -26,7 +31,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider />
-            <Sidebar>{children}</Sidebar>
+            <Sidebar songs={userSongs}>{children}</Sidebar>
           </UserProvider>
         </SupabaseProvider>
       </body>
