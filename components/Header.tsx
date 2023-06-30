@@ -82,7 +82,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                 </Button>
                 <Button
                   onClick={handleLogout}
-                  className="bg-white py-0.5 text-sm md:text-base"
+                  className="bg-white text-sm md:text-base"
                 >
                   Logout
                 </Button>
@@ -92,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                 <div>
                   <Button
                     onClick={authModal.onOpen}
-                    className="bg-transparent py-0.5 text-sm font-medium text-neutral-300 md:text-base"
+                    className="bg-transparent text-sm font-medium text-neutral-300 md:text-base"
                   >
                     Sign Up
                   </Button>
@@ -100,7 +100,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                 <div>
                   <Button
                     onClick={authModal.onOpen}
-                    className="bg-white py-0.5 text-sm font-medium md:text-base"
+                    className="bg-white text-sm font-medium md:text-base"
                   >
                     Login
                   </Button>

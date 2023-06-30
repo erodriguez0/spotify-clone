@@ -3,7 +3,7 @@ import ListItem from "@/components/ListItem"
 
 const Home = () => {
   return (
-    <div className="h-full w-full overflow-hidden overflow-y-auto bg-neutral-900">
+    <div className="h-full w-full overflow-hidden overflow-y-auto rounded-md bg-neutral-900">
       <Header>
         <div>
           <h1 className="text-3xl font-semibold text-white">Welcome Back</h1>
