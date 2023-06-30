@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
 
   return (
     <div className="flex h-full gap-x-2 md:p-2">
-      <div className="hidden h-full w-[300px] flex-col gap-y-2 bg-black md:flex">
+      <div className="hidden h-full w-[350px] flex-col gap-y-2 bg-black md:flex">
         <Box className="flex flex-col gap-y-4 p-4">
           {routes.map(route => (
             <SidebarItem

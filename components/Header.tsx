@@ -63,10 +63,16 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
 
           {/* MOBILE */}
           <div className="flex items-center gap-x-2 md:hidden">
-            <button className="flex items-center justify-center p-2 transition hover:opacity-75">
+            <button
+              onClick={() => router.push("/")}
+              className="flex items-center justify-center p-2 transition hover:opacity-75"
+            >
               <HiHome size={20} />
             </button>
-            <button className="flex items-center justify-center p-2 transition hover:opacity-75">
+            <button
+              onClick={() => router.push("/search")}
+              className="flex items-center justify-center p-2 transition hover:opacity-75"
+            >
               <BiSearch size={20} />
             </button>
           </div>
