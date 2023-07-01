@@ -8,6 +8,7 @@ import ModalProvider from "@/providers/ModalProvider"
 import ToasterProvider from "@/providers/ToaterProvider"
 import getSongsByUsedId from "@/actions/getSongsByUserId"
 import Player from "@/components/Player"
+import getActiveProductsWithPrices from "@/actions/getActiveProductsWithPrices"
 
 const figtree = Figtree({ subsets: ["latin"] })
 
@@ -24,6 +25,7 @@ export const revalidate = 0
 
 const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
   const userSongs = await getSongsByUsedId()
+  const products = await getActiveProductsWithPrices()
 
   return (
     <html lang="en">
@@ -31,7 +33,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
         <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
-            <ModalProvider />
+            <ModalProvider products={products} />
             <Sidebar songs={userSongs}>{children}</Sidebar>
             <Player />
           </UserProvider>
