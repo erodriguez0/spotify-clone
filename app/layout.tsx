@@ -7,6 +7,7 @@ import UserProvider from "@/providers/UserProvider"
 import ModalProvider from "@/providers/ModalProvider"
 import ToasterProvider from "@/providers/ToaterProvider"
 import getSongsByUsedId from "@/actions/getSongsByUserId"
+import Player from "@/components/Player"
 
 const figtree = Figtree({ subsets: ["latin"] })
 
@@ -32,6 +33,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
           <UserProvider>
             <ModalProvider />
             <Sidebar songs={userSongs}>{children}</Sidebar>
+            <Player />
           </UserProvider>
         </SupabaseProvider>
       </body>
